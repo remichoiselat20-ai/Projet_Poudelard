@@ -56,10 +56,18 @@ def demander_choix(message, options):
     for i, opt in enumerate(options, start=1):
         print(f"{i}. {opt}")
 
-    choix = demander_nombre("Votre choix : ", 1, len(options))
-    return options[choix - 1]
-
+    choix = (demander_nombre("Votre choix : ", 1, len(options)))
+    return choix
 
 def load_fichier(chemin_fichier):
     with open(chemin_fichier, "r", encoding="utf-8") as f:
         return json.load(f)
+    
+def lire(message, speed):
+    for char in message:
+        if char == 'ඞ':
+            input()
+        else:
+            print(char, end='', flush=True)
+            for _ in range(100000 * (11 - speed)): pass
+    print()
