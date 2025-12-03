@@ -1,2 +1,2 @@
-from chapitres.chapitre_1 import *
-lancer_chapitre1()
+from menu import * 
+lancer_choix_menu()

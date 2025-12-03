@@ -8,7 +8,7 @@ def introduction():
 
 def creer_personnage():
     nom = input("Entrez le nom de votre personnage : ")
-    prenom = input("Entrez le prénom de votre personnage :")
+    prenom = input("Entrez le prénom de votre personnage : ")
     print("\nChoisissez vos attributs : ")
     traits = ["courage", "intelligence", "loyauté", "ambition"]
     attributs = {}
@@ -113,3 +113,6 @@ def lancer_chapitre1():
     rencontrer_hagrid(joueur)
     print()
     acheter_fournitures(joueur)
+    print("Fin du Chapitre 1 ! Votre aventure commence à Poudlard...")
+    input()
+    return joueur

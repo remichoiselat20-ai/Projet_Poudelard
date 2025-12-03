@@ -63,11 +63,11 @@ def load_fichier(chemin_fichier):
     with open(chemin_fichier, "r", encoding="utf-8") as f:
         return json.load(f)
     
-def lire(message, speed):
+def lire(message, speed=10):
     for char in message:
         if char == 'ඞ':
             input()
         else:
             print(char, end='', flush=True)
-            for _ in range(100000 * (11 - speed)): pass
+            for _ in range(10 * (11 - speed)): pass
     print()

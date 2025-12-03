@@ -39,30 +39,19 @@ def repartition_maison(joueur, questions):
     for q in questions:
         texte = q[0]
         choix_possibles = q[1]
-        maisons_associees = q[2]
         choix = demander_choix(texte, choix_possibles)
-        index = 0
-        for i in range(len(choix_possibles)):
-            if choix_possibles[i] == choix:
-                index = i
-        maison = maisons_associees[index]
-        scores[maison] = scores[maison] + 3
-
-    valeurs = []
-    for m in scores:
-        valeurs.append(scores[m])
-    maximum = valeurs[0]
-    for v in valeurs:
-        if v > maximum:
-            maximum = v
-    gagnante = ""
-    for m in scores:
-        if scores[m] == maximum:
-            gagnante = m
-            break
+        scores[q[2][choix-1]] += 3
 
     print("Résumé des scores :")
     for m in scores:
         print(m, ":", scores[m], "points")
+    gagnante = "Gryffondor"
+    for maison in scores:
+        if scores[maison] > scores[gagnante]:
+            gagnante = maison
+    joueur["Attributs"]["courage"] = scores["Gryffondor"]
+    joueur["Attributs"]["ambition"] = scores["Serpentard"]
+    joueur["Attributs"]["loyauté"] = scores["Poufsouffle"]
+    joueur["Attributs"]["intelligence"] = scores["Serdaigle"]
 
     return gagnante
