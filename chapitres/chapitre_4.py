@@ -10,11 +10,11 @@ def creer_equipe(maison, equipe_data, est_joueur=False, joueur=None):
             "a_stoppe": 0,
             "attrape_vifdor": False,
               }
-    joueurs = equipe_data[maison]["joueur"]
+    joueurs = equipe_data[maison]["joueurs"]
     if est_joueur and joueur :
-        new_joueur = [f"{joueurs["Prenom"]} {joueur["Nom"]} (Attrapeur)"]
-        for i in joueur[1:]:
-            if i.slpit(" (")[0] != f"{joueurs["Prenom"]} {joueur["Nom"]}":
+        new_joueur = [f"{joueur["Prenom"]} {joueur["Nom"]} (Attrapeur)"]
+        for i in joueurs[1:]:
+            if i.split(" (")[0] != f"{joueur["Prenom"]} {joueur["Nom"]}":
                 new_joueur.append(i)
         joueurs = new_joueur
     equipe["joueurs"] = joueurs
@@ -25,9 +25,9 @@ def tentative_marque(equipe_attaque, equipe_defense, joueur_est_joueur=False):
     proba_but = random.randint(1,10)
     if proba_but > 5 :
         if joueur_est_joueur == True:
-            buteur = equipe_attaque["joueur"][0]
+            buteur = equipe_attaque["joueurs"][0]
         else:
-            buteur = equipe_attaque["joueur"][random.randint(0,6)]
+            buteur = equipe_attaque["joueurs"][random.randint(0,6)]
         equipe_attaque["score"] += 1
         equipe_attaque["a_marque"] += 1
         print(buteur, " marque un but pour ",equipe_attaque["nom"])
@@ -48,8 +48,8 @@ def attraper_vifdor(e1,e2):
 
 def afficher_score(e1,e2):
     print("Score actuel :\n")
-    print(f"{e1["nom"]} : {e1["score"]} points\n")
-    print(f"{e2["nom"]} : {e2["score"]} points")
+    print(f"--{e1["nom"]} : {e1["score"]} points\n")
+    print(f"--{e2["nom"]} : {e2["score"]} points")
 
 def afficher_equipe(maison,equipe):
     print("Équipe de ",maison," :\n")
@@ -59,7 +59,9 @@ def afficher_equipe(maison,equipe):
 def match_quidditch(joueur,maisons):
     equipes = input_utils.load_fichier("data/equipes_quidditch.json")
     maison_joueur = joueur["Maison"]
-    maison_adverse = maisons[maison.keys()[random.randint(0,len(maison.keys()))]]
+    maison_adverse = joueur["Maison"]
+    while maison_adverse == maison_joueur:
+        maison_adverse = random.choice(list(maisons.keys()))
     equipe_joueur = creer_equipe(maison_joueur,equipes,True,joueur)
     equipe_adverse = creer_equipe(maison_adverse,equipes,False,None)
     afficher_equipe(maison_joueur,equipe_joueur)
@@ -80,22 +82,22 @@ def match_quidditch(joueur,maisons):
             gagnant_vif = True
             break
         tours += 1
-        input("Appuyez sur Entrée pour continuer")
+        input("\nAppuyez sur Entrée pour continuer")
     print("Fin du match !")
     afficher_score(equipe_joueur,equipe_adverse)
     print("Résultat final :\n")
     if gagnant_vif:
-        print(f"Le Vif d’Or a été attrapé par Serdaigle !\n+150 points pour {gagnant["nom"]} ! Total : {gagnant["score"]} points.")
+        print(f"Le Vif d’Or a été attrapé par Serdaigle !\n+150 points pour {gagnant["nom"]} ! Total : {gagnant["score"]} points.\n")
     if equipe_joueur["score"] > equipe_adverse["score"]:
-        print(f"La maison gagnante est {equipe_joueur["nom"]} avec {equipe_joueur["score"]} points !")
+        print(f"La maison gagnante est {equipe_joueur["nom"]} avec {equipe_joueur["score"]} points !\n")
         maison.actualiser_points_maison(maisons,maison_joueur,500)
-        print(f"+500 points pour {equipe_joueur} Total : {maisons[maison_joueur]}")
-        print(f"La maison gagnante est {equipe_joueur} avec {maisons[maison_joueur]} !")
+        print(f"+500 points pour {equipe_joueur["nom"]} Total : {maisons[maison_joueur]}\n")
+        print(f"La maison gagnante est {equipe_joueur["nom"]} avec {maisons[maison_joueur]} !\n")
     elif equipe_adverse["score"] > equipe_joueur["score"]:
-        print(f"La maison gagnante est {equipe_adverse["nom"]} avec {equipe_adverse["score"]} points !")
+        print(f"La maison gagnante est {equipe_adverse["nom"]} avec {equipe_adverse["score"]} points !\n")
         maison.actualiser_points_maison(maisons, maison_adverse, 500)
-        print(f"+500 points pour {equipe_adverse} Total : {maisons[maison_adverse]}")
-        print(f"La maison gagnante est {equipe_adverse} avec {maisons[maison_adverse]} !")
+        print(f"+500 points pour {equipe_adverse["nom"]} Total : {maisons[maison_adverse]}\n")
+        print(f"La maison gagnante est {equipe_adverse["nom"]} avec {maisons[maison_adverse]} !\n")
     else:
         print(f"Match nul ! Le score est {equipe_joueur["score"]} à {equipe_joueur["score"]}")
 
