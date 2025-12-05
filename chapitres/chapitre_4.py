@@ -1,3 +1,4 @@
+import random
 def creer_equipe(maison, equipe_data, est_joueur=False, joueur=None):
     equipe = {"nom" : maison,
             "score" : 0,
@@ -16,3 +17,4 @@ def creer_equipe(maison, equipe_data, est_joueur=False, joueur=None):
     return equipe
 
 def tentative_marque(equipe_attaque, equipe_defense, joueur_est_joueur=False):
+    proba_but = random.randint(1,10)
