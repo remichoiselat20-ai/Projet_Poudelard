@@ -1,11 +1,5 @@
-from chapitres.chapitre_1 import *
-from univers.personnage import *
-from chapitres.chapitre_2 import *
-from chapitres.chapitre_3 import *
-#joueur = lancer_chapitre1()
-#lancer_chapitre_2(joueur)
-#quiz_magie({'Nom': 'caca', 'Prenom': 'caca', 'Argent': 0, 'Inventaire': ['Baguette magique', 'Robe de sorcier', 'Manuel de potions', 'Chouette'], 'Sortilèges': [], 'Attributs': {'courage': 4, 'intelligence': 11, 'loyauté': 6, 'ambition': 2}, 'Maison': 'Serdaigle'})
-
+from chapitres import chapitre_1, chapitre_2, chapitre_3, chapitre_4
+from utils import input_utils
 def afficher_menu_principal():
     print("1. Lancer le Chapitre 1 – L’arrivée dans le monde magique.")
     print("2. Quitter le jeu.")
@@ -18,10 +12,12 @@ def lancer_choix_menu():
         "Serdaigle" : 0
     }
     afficher_menu_principal()
-    if demander_nombre("", 1, 2) == 1:
-        joueur = lancer_chapitre1()
-        lancer_chapitre_2(joueur)
-        lancer_chapitre_3(joueur, maisons)
+    if input_utils.demander_nombre("", 1, 2) == 1:
+        joueur = chapitre_1.lancer_chapitre1()
+        chapitre_2.lancer_chapitre_2(joueur)
+        chapitre_3.lancer_chapitre_3(joueur, maisons)
+        chapitre_4.lancer_chapitre4_quidditch(joueur,maisons)
+
     else:
         print("bye bye")
 
