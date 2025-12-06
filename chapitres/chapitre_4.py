@@ -65,9 +65,8 @@ def match_quidditch(joueur,maisons):
     equipe_joueur = creer_equipe(maison_joueur,equipes,True,joueur)
     equipe_adverse = creer_equipe(maison_adverse,equipes,False,None)
     afficher_equipe(maison_joueur,equipe_joueur)
-    print("\n")
     afficher_equipe(maison_adverse,equipe_adverse)
-    print(f"Tu joues pour {maison_joueur} en tant qu'Attrapeur\n")
+    print(f"\nTu joues pour {maison_joueur} en tant qu'Attrapeur\n")
     tours = 1
     gagnant_vif = False
     while tours <= 20 :
