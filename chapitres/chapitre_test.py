@@ -3,13 +3,14 @@ import os
 """shoutout to chat gpt"""
 # Add parent directory (Projet_Poudelard) to Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+import chapitre_4
 from utils.input_utils import demander_texte, demander_nombre
 from univers.personnage import initialiser_personnage, afficher_personnage
 from univers.maison import repartition_maison
 
 from univers.personnage import initialiser_personnage, afficher_personnage
 from univers.maison import repartition_maison
+
 questions = [
     (
         "Tu vois un ami en danger. Que fais-tu ?",
@@ -52,3 +53,39 @@ maison = repartition_maison(joueur, questions)
 
 print("\nLe Choixpeau a parlé !")
 print("Tu appartiens à :", maison)
+
+#test chap 4
+
+joueur_test = {
+    "Nom": "Potter",
+    "Prenom": "Harry",
+    "Argent": 45,  # Argent restant après achats
+    "Maison": "Gryffondor",
+    "Inventaire": [
+        "Baguette magique",
+        "Robe de sorcier",
+        "Manuel de potions",
+        "Chouette"
+    ],
+    "Sortilèges": [
+        {"nom": "Rictusempra", "type": "Offensif", "description": "Fait rire et chatouille la cible"},
+        {"nom": "Expelliarmus", "type": "Défensif", "description": "Désarme un adversaire"},
+        {"nom": "Wingardium Leviosa", "type": "Utilitaire", "description": "Fait léviter des objets"},
+        {"nom": "Lumos Solem", "type": "Utilitaire", "description": "Produit une lumière puissante"},
+        {"nom": "Obliviate", "type": "Utilitaire", "description": "Efface des souvenirs"}
+    ],
+    "Attributs": {
+        "courage": 9,
+        "intelligence": 8,
+        "loyauté": 8,
+        "ambition": 6
+    }
+}
+
+maisons_test = {
+    "Gryffondor": 50,
+    "Serpentard": 20,
+    "Poufsouffle": 30,
+    "Serdaigle": 40
+}
+chapitre_4.lancer_chapitre4_quidditch(joueur_test,maisons_test)
