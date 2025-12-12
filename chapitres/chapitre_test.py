@@ -1,6 +1,6 @@
 import sys
 import os
-"""shoutout to chat gpt"""
+
 # Add parent directory (Projet_Poudelard) to Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import chapitre_4
@@ -90,3 +90,4 @@ maisons_test = {
     "Serdaigle": 40
 }
 chapitre_4.lancer_chapitre4_quidditch(joueur_test,maisons_test)
+
