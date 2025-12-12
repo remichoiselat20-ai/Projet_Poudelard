@@ -82,6 +82,7 @@ joueur_test = {
     }
 }
 
+
 maisons_test = {
     "Gryffondor": 50,
     "Serpentard": 20,
