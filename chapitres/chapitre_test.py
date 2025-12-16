@@ -10,7 +10,7 @@ from univers.maison import repartition_maison
 
 from univers.personnage import initialiser_personnage, afficher_personnage
 from univers.maison import repartition_maison
-
+"""
 questions = [
     (
         "Tu vois un ami en danger. Que fais-tu ?",
@@ -55,7 +55,7 @@ print("\nLe Choixpeau a parlé !")
 print("Tu appartiens à :", maison)
 
 #test chap 4
-
+"""
 joueur_test = {
     "Nom": "Potter",
     "Prenom": "Harry",

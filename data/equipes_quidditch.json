@@ -1,51 +1,53 @@
 {
   "Gryffondor": {
-    "capitaine": "Harry Potter",
+    "capitaine": "Harry Pooper",
     "joueurs": [
-      "Harry Potter (Attrapeur)",
-      "Ginny Weasley (Chasseuse)",
-      "Katie Bell (Chasseuse)",
-      "Demelza Robins (Chasseuse)",
-      "Ron Weasley (Gardien)",
-      "Jimmy Peakes (Batteur)",
-      "Ritchie Coote (Batteur)"
+      "Harry Pooper (Attrapeur)",
+      "Ginny Wigglebutt (Chasseuse)",
+      "Katie Bouboule (Chasseuse)",
+      "Demelza Briochefondue (Chasseuse)",
+      "Ron Ronflex (Gardien)",
+      "Jimmy Pataclac (Batteur)",
+      "Ritchie Grosmarteau (Batteur)"
     ]
   },
+
   "Serpentard": {
-    "capitaine": "Drago Malefoy",
+    "capitaine": "Drago Malfouin",
     "joueurs": [
-      "Drago Malefoy (Attrapeur)",
-      "Cassius Warrington (Chasseur)",
-      "Graham Montague (Chasseur)",
-      "Urquhart (Chasseur)",
-      "Miles Bletchley (Gardien)",
-      "Vincent Crabbe (Batteur)",
-      "Gregory Goyle (Batteur)"
+      "Drago Malfouin (Attrapeur)",
+      "Cassius Troudeballe (Chasseur)",
+      "Graham Bidondor (Chasseur)",
+      "Urquhart Ronchonnard (Chasseur)",
+      "Miles Beurkley (Gardien)",
+      "Vincent Krustaboum (Batteur)",
+      "Gregory Goéland (Batteur)"
     ]
   },
+
   "Serdaigle": {
-    "capitaine": "Cho Chang",
+    "capitaine": "Chou Chwing",
     "joueurs": [
-      "Cho Chang (Attrapeuse)",
-      "Roger Davies (Chasseur)",
-      "Michael Corner (Chasseur)",
-      "Jeremy Stretton (Chasseur)",
-      "Grant Page (Gardien)",
-      "Jason Samuels (Batteur)",
-      "Randall Phelps (Batteur)"
+      "Chou Chwing (Attrapeuse)",
+      "Roger Dévisse (Chasseur)",
+      "Michael Cornichon (Chasseur)",
+      "Jeremy Stresson (Chasseur)",
+      "Grant Pépin (Gardien)",
+      "Jason Sauciflar (Batteur)",
+      "Randall Pofpof (Batteur)"
     ]
   },
+
   "Poufsouffle": {
-    "capitaine": "Cedric Diggory",
+    "capitaine": "Cédric Dégobille",
     "joueurs": [
-      "Cedric Diggory (Attrapeur)",
-      "Heidi Macavoy (Chasseuse)",
-      "Zacharias Smith (Chasseur)",
-      "Jason Samuels (Chasseur)",
-      "Herbert Fleet (Gardien)",
-      "Anthony Rickett (Batteur)",
-      "Maxine O'Flaherty (Batteuse)"
+      "Cédric Dégobille (Attrapeur)",
+      "Heidi Macaroni (Chasseuse)",
+      "Zacharias Sniff (Chasseur)",
+      "Jason Samoul (Chasseur)",
+      "Herbert Flotteur (Gardien)",
+      "Anthony Ricochet (Batteur)",
+      "Maxine O’Fluffy (Batteuse)"
     ]
   }
 }
-

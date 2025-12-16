@@ -3,6 +3,9 @@ from univers.personnage import *
 import json
 
 def introduction():
+    with open("chapitres/ascii poudelard.txt","r",encoding="utf-8") as f:
+        content = f.read()
+        print(f"{content}\n")
     lire("Bonjour mes silly billies", 10)
     input()
 
