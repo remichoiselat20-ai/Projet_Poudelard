@@ -70,10 +70,11 @@ def installation_salle_commune(joueur):
 
 def lancer_chapitre_2(joueur):
     recontrer_amis(joueur)
-    print("placeholder") # message dumbledore tbd
+    print("Bonjour c'est moi le VRAI DUMBLEDORE bienvenue à la céremonie!")
+    input()
     ceremonie_repartition(joueur)
     installation_salle_commune(joueur)
     afficher_personnage(joueur)
-    print("placeholder") #Affichage d’un message confirmant la fin du chapitre et annonçant le début des cours à Poudlard
-
+    print("Bravo, tu as complété le chapitre 2, les cours commencent à Poudelard")
+    input()
 
