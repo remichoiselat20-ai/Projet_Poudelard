@@ -59,7 +59,11 @@ def afficher_equipe(maison,equipe):
 def match_quidditch(joueur,maisons):
     equipes = input_utils.load_fichier("..\data\equipes_quidditch.json")
     maison_joueur = joueur["Maison"]
-    maison_adverse = joueur["Maison"]
+    maisons_restantes = []
+    for i in maisons.keys():
+        if i != maison_joueur:
+            maisons_restantes.append(i)
+    maison_adverse = random.choice(maisons_restantes)
     while maison_adverse == maison_joueur:
         maison_adverse = random.choice(list(maisons.keys()))
     equipe_joueur = creer_equipe(maison_joueur,equipes,True,joueur)
@@ -86,7 +90,7 @@ def match_quidditch(joueur,maisons):
     afficher_score(equipe_joueur,equipe_adverse)
     print("Résultat final :\n")
     if gagnant_vif:
-        print(f"Le Vif d’Or a été attrapé par Serdaigle !\n+150 points pour {gagnant["nom"]} ! Total : {gagnant["score"]} points.\n")
+        print(f"Le Vif d’Or a été attrapé par {gagnant["nom"]} !\n+150 points pour {gagnant["nom"]} ! Total : {gagnant["score"]} points.\n")
     if equipe_joueur["score"] > equipe_adverse["score"]:
         print(f"La maison gagnante est {equipe_joueur["nom"]} avec {equipe_joueur["score"]} points !\n")
         maison.actualiser_points_maison(maisons,maison_joueur,500)
