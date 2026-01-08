@@ -57,7 +57,7 @@ def afficher_equipe(maison,equipe):
         print(f" - {i}\n")
 
 def match_quidditch(joueur,maisons):
-    equipes = input_utils.load_fichier("..\data\equipes_quidditch.json")
+    equipes = input_utils.load_fichier("data/equipes_quidditch.json")
     maison_joueur = joueur["Maison"]
     maisons_restantes = []
     for i in maisons.keys():
